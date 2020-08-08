@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
+import { HttpClientModule} from '@angular/common/http';
 
 import { HeaderComponent } from './header/header.component';
 import { BatmanFamilyListComponent } from './batman-family-list/batman-family-list.component';
@@ -27,7 +28,8 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

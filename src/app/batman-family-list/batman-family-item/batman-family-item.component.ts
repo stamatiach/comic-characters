@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Hero } from 'src/app/data-models/hero.model';
 
 @Component({
   selector: 'app-batman-family-item',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BatmanFamilyItemComponent implements OnInit {
 
+  @Input() member: Hero;
+
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }

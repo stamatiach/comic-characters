@@ -1,1 +1,11 @@
-<p>batman-family-list works!</p>
+<div class="container">
+  <div class="clearfix">
+    <h3 class="text-white float-left">Batman Family members</h3>
+    <button type="button" class="btn btn-success float-right">Add new member</button>
+  </div>
+  <div class="row">
+    <app-batman-family-item *ngFor="let member of batmanFamilyMembers" class="col-3"
+      [member]="member">
+    </app-batman-family-item> 
+  </div>
+</div>

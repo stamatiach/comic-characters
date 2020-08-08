@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Hero } from '../data-models/hero.model';
+import { HeroService } from '../hero.service';
+import { DataClientService } from '../data-client.service';
 
 @Component({
   selector: 'app-batman-family-list',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BatmanFamilyListComponent implements OnInit {
 
-  constructor() { }
+  batmanFamilyMembers: Hero[];
+  constructor(private dataClient: DataClientService, private heroService: HeroService) { }
 
   ngOnInit(): void {
+    this.dataClient.fetchBatmanFamily();
+    this.batmanFamilyMembers = this.heroService.getBatmanFamily();
+    console.log(this.batmanFamilyMembers);
   }
-
 }
