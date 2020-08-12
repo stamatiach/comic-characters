@@ -8,6 +8,6 @@ import { Connections } from './connections.model';
 export class Hero {
   
   constructor(public responseStatus: string, public id: string, public name: string, public powerstats: Powerstats, public biography:Biography,
-     public apprearance: Appearance, public work: Work, public connections: Connections, public image: Image) { }
+     public appearance: Appearance, public work: Work, public connections: Connections, public image: Image) { }
 
 }

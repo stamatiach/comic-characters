@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HeroService } from '../hero.service';
+import { DataClientService } from '../data-client.service';
+import { Hero } from '../data-models/hero.model';
 
 @Component({
   selector: 'app-hero-list',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeroListComponent implements OnInit {
 
-  constructor() { }
+  heroes: Hero[];
+
+  constructor(private heroService: HeroService, private client: DataClientService) { }
 
   ngOnInit(): void {
+    this.client.fetchHeroes();
+    this.heroes = this.heroService.getHeroes();
   }
 
 }

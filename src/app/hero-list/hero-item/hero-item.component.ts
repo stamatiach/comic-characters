@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Hero } from 'src/app/data-models/hero.model';
 
 @Component({
   selector: 'app-hero-item',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeroItemComponent implements OnInit {
 
+  @Input() hero: Hero;
+
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }
