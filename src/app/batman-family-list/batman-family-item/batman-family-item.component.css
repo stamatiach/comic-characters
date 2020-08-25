@@ -2,6 +2,7 @@
   width: 150px;
   height: 200px;
   margin: 50px;
+  cursor: pointer;
 }
 
 .hero-container:hover .image-description  {

@@ -26,7 +26,7 @@ export class BatmanFamilyListComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.height = '800px';
     dialogConfig.width = '850px';
-    let dialogRef = this.dialog.open(EditHeroComponent, dialogConfig);
+    this.dialog.open(EditHeroComponent, dialogConfig);
   }
 
 }
