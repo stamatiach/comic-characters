@@ -1,0 +1,8 @@
+.mat-dialog-title, .mat-expansion-panel-header-title {
+  color: white;
+}
+
+.mat-expansion-panel-header-title {
+  font-size: 14px;
+}
+

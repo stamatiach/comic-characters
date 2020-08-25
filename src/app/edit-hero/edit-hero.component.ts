@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-edit-hero',
@@ -7,9 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditHeroComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialogRef: MatDialogRef<EditHeroComponent>) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {  }
 
 }
