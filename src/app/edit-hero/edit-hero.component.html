@@ -1,104 +1,113 @@
-<h2 mat-dialog-title>Edit</h2>
-<mat-dialog-content class="text">  
-  <mat-accordion>
-    <mat-expansion-panel hideToggle>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          General information
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-      <div class="row">
-        <div class="col-xs-12 form-group">
-          <label for="name">Name: </label>
-          <input type="text" id="name" name="name" class="form-control">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 form-group">
-        <label for="secretId">Secret identity: </label>
-        <input type="text" id="secretId" name="secretId" class="form-control">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 form-group">
-        <label for="alterEgos">Alter egos: </label>
-        <input type="text" id="alterEgos" name="alterEgos" class="form-control">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 form-group">
-        <label for="birthPlacce">Birth place: </label>
-        <input type="text" id="birthPlacce" name="birthPlacce"  class="form-control">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 form-group">
-        <label for="occupation">Occupation: </label>
-        <input type="text" id="occupation"  name="occupation" class="form-control">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 form-group">
-            <label for="imagePath">Image URL</label>
-            <input type="text" id="imagePath" name="imagePath" class="form-control">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12">
-            <img src="imagePath.value" class="img-responsive">
-        </div>
-      </div>
-    </mat-expansion-panel>
+<div>
+  <form (ngSubmit)="onSubmit()" [formGroup]="editHeroForm">
+    <h2 mat-dialog-title>Edit</h2>
+    <mat-dialog-content class="text">
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              General information
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row">
+            <div class="col">
+              <div class="">
+                <img [src]="imagePath.value" class="img-responsive image-size">
+              </div>
+            </div>
+            <div class="col">
+              <div class="">
+                <div class="col-md form-group">
+                  <label for="heroName">Name: </label>
+                  <input type="text" id="name" formControlName="heroName" class="form-control">
+                </div>
+              </div>
+              <div class="">
+                <div class="col-md form-group">
+                  <label for="secretId">Secret identity: </label>
+                  <input type="text" id="secretId" formControlName="secretId" class="form-control">
+                </div>
+              </div>
+              <div class="">
+                <div class="col-md form-group">
+                  <label for="alterEgos">Alter egos: </label>
+                  <input type="text" id="alterEgos" formControlName="alterEgos" class="form-control">
+                </div>
+              </div>
+              <div class="">
+                <div class="col-md form-group">
+                  <label for="birthPlacce">Birth place: </label>
+                  <input type="text" id="birthPlacce" formControlName="birthPlacce" class="form-control">
+                </div>
+              </div>
+              <div class="">
+                <div class="col-md form-group">
+                  <label for="occupation">Occupation: </label>
+                  <input type="text" id="occupation" formControlName="occupation" class="form-control">
+                </div>
+              </div>
+              <div class="">
+                <div class="col-md form-group">
+                  <label for="imagePath">Image URL</label>
+                  <input type="text" id="imagePath" formControlName="imagePath" class="form-control" #imagePath>
+                </div>
+              </div>
+            </div>
+          </div>
 
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Powerstats
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-      <div class="row">
-        <div class="col-xs-12 form-group">
-          <label for="intelligence">Intelligence: </label>
-          <input type="text" id="intelligence" name="intelligence" class="form-control">
-        </div>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Powerstats
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="">
+            <div class="col-md form-group">
+              <label for="intelligence">Intelligence: </label>
+              <input type="text" id="intelligence" formControlName="intelligence" class="form-control">
+            </div>
+          </div>
+          <div class="">
+            <div class="col-md form-group">
+              <label for="durability">Durability: </label>
+              <input type="text" id="durability" formControlName="durability" class="form-control">
+            </div>
+          </div>
+          <div class="">
+            <div class="col-md form-group">
+              <label for="strength">Strength: </label>
+              <input type="text" id="strength" formControlName="strength" class="form-control">
+            </div>
+          </div>
+          <div class="">
+            <div class="col-md form-group">
+              <label for="speed">Speed: </label>
+              <input type="text" id="speed" formControlName="speed" class="form-control">
+            </div>
+          </div>
+          <div class="">
+            <div class="col-md form-group">
+              <label for="power">Power: </label>
+              <input type="text" id="power" formControlName="power" class="form-control">
+            </div>
+          </div>
+          <div class="">
+            <div class="col-md form-group">
+              <label for="combat">Combat: </label>
+              <input type="text" id="combat" formControlName="combat" class="form-control">
+            </div>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+    </mat-dialog-content>
+    <mat-dialog-actions>
+      <div class="">
+        <button type="submit" class="mr-1 btn btn-success">Save</button>
+        <button [mat-dialog-close]="true" class="btn btn-danger">Close</button>
       </div>
-      <div class="row">
-        <div class="col-xs-12 form-group">
-        <label for="durability">Durability: </label>
-        <input type="text" id="durability" name="durability" class="form-control">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 form-group">
-        <label for="strength">Strength: </label>
-        <input type="text" id="strength" name="strength" class="form-control">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 form-group">
-        <label for="speed">Speed: </label>
-        <input type="text" id="speed" name="speed" class="form-control">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 form-group">
-        <label for="power">Power: </label>
-        <input type="text" id="power" name="power" class="form-control">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 form-group">
-            <label for="combat">Combat: </label>
-            <input type="text" id="combat" name="combat" class="form-control">
-        </div>
-      </div>
-    </mat-expansion-panel>
-  </mat-accordion>
-  
-</mat-dialog-content>
-<mat-dialog-actions>
-  <div class="row">
-    <button type="button" class="mr-1 btn btn-success">Save</button>
-    <button [mat-dialog-close]="true" class="btn btn-danger">Close</button>
-  </div>
-</mat-dialog-actions>
+    </mat-dialog-actions>
+  </form>
+</div>

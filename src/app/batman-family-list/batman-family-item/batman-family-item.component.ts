@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Hero } from 'src/app/data-models/hero.model';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { EditHeroComponent } from 'src/app/edit-hero/edit-hero.component';
+import { HeroService } from 'src/app/hero.service';
 
 @Component({
   selector: 'app-batman-family-item',
@@ -12,15 +11,11 @@ export class BatmanFamilyItemComponent implements OnInit {
 
   @Input() member: Hero;
 
-  constructor(public dialog: MatDialog) { }
+  constructor(private heroService: HeroService) { }
 
   ngOnInit(): void { }
 
   onEditHero(){
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.width = "800px";
-    dialogConfig.height = "800px";
-    dialogConfig.data = {hero: this.member};
-    this.dialog.open(EditHeroComponent, dialogConfig);
+    this.heroService.editHero(this.member);
   }
 }
