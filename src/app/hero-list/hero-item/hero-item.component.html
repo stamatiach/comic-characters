@@ -1,7 +1,8 @@
 
-<div class="carousel-caption d-none d-md-block ">
-  <span class="image-description"> {{ hero.name }}</span>
+<div>
+  <div class="carousel-caption d-none d-md-block ">
+    <span class="image-description"> {{ hero.name }}</span>
+  </div>
+  <img class="hero-image" [src]="hero.image.url" (click)="onEditHero()">
 </div>
-<img class="hero-image" [src]="hero.image.url">
-
 

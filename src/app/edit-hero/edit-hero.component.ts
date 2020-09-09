@@ -1,15 +1,13 @@
-import { Component, OnInit, Inject, ViewChild } from '@angular/core';
+import { Component, OnInit, Inject, ViewChild, AfterContentChecked, AfterContentInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Hero } from '../data-models/hero.model';
-import { NgForOf } from '@angular/common';
-import { NgForm, FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-edit-hero',
   templateUrl: './edit-hero.component.html',
   styleUrls: ['./edit-hero.component.css']
 })
-export class EditHeroComponent implements OnInit {
+export class EditHeroComponent implements OnInit, AfterContentInit {
 
   editHeroForm = new FormGroup({
     heroName: new FormControl(''),
