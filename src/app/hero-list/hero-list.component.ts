@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HeroService } from '../hero.service';
-import { DataClientService } from '../data-client.service';
 import { Hero } from '../data-models/hero.model';
 
 @Component({
@@ -12,10 +11,9 @@ export class HeroListComponent implements OnInit {
 
   heroes: Hero[];
 
-  constructor(private heroService: HeroService, private client: DataClientService) { }
+  constructor(private heroService: HeroService) { }
 
   ngOnInit(): void {
-    this.client.fetchHeroes();
     this.heroes = this.heroService.getHeroes();
   }
 

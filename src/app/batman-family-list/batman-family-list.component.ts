@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../data-models/hero.model';
 import { HeroService } from '../hero.service';
-import { DataClientService } from '../data-client.service';
 
 
 @Component({
@@ -12,10 +11,9 @@ import { DataClientService } from '../data-client.service';
 export class BatmanFamilyListComponent implements OnInit {
 
   batmanFamilyMembers: Hero[];
-  constructor(private dataClient: DataClientService, private heroService: HeroService) { }
+  constructor(private heroService: HeroService) { }
 
   ngOnInit(): void {
-    this.dataClient.fetchBatmanFamily();
     this.batmanFamilyMembers = this.heroService.getBatmanFamily();
   }
 

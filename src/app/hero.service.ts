@@ -19,21 +19,20 @@ export class HeroService {
     return this.heroes
   }
 
+  public setBatmanFamily(heroes: Hero[]) {
+    this.batmanFamily = heroes;
+  }
+
+  public getBatmanFamily(): Hero[] {  
+    return this.batmanFamily
+  }
+
   public getHero(id: string): Hero {
     for( let hero of this.heroes) {
       if(hero.id === id) {
         return hero;
       }
     }
-  }
-
-  public setBatmanFamily(heroes: Hero[]) {
-    this.sortByName(heroes);
-    this.heroes = heroes;
-  }
-
-  public getBatmanFamily(): Hero[] {  
-    return this.heroes
   }
 
   public sortByName(heroes: Hero[]): Hero[] {
