@@ -8,6 +8,7 @@ export class HeroService {
 
   heroes: Hero[] = [];
   batmanFamily: Hero[] = [];
+  ascending: boolean = true;
 
   constructor(private dialog: MatDialog) {  }
 
@@ -16,7 +17,7 @@ export class HeroService {
   }
 
   public getHeroes(): Hero[] {
-    return this.heroes
+    return this.heroes;
   }
 
   public setBatmanFamily(heroes: Hero[]) {
@@ -24,7 +25,16 @@ export class HeroService {
   }
 
   public getBatmanFamily(): Hero[] {  
-    return this.batmanFamily
+    this.sortByName(this.batmanFamily);
+    return this.batmanFamily;
+  }
+
+  public getBatmanFamilyMember(id: string): Hero {
+    for( let hero of this.batmanFamily) {
+      if(hero.id === id) {
+        return hero;
+      }
+    }
   }
 
   public getHero(id: string): Hero {
@@ -33,12 +43,16 @@ export class HeroService {
         return hero;
       }
     }
+    return this.getBatmanFamilyMember(id);
   }
 
-  public sortByName(heroes: Hero[]): Hero[] {
-    return heroes.sort((a, b) => {
-      return (a[name] > b[name]) ? 1 : -1; 
-    });
+  public sortByName(heroes: Hero[]) {
+    if (this.ascending) {
+      this.ascending = false;
+      heroes.sort((a: Hero, b: Hero) => {
+        return (a.name > b.name) ? 1 : -1; 
+       });
+    }
   }
 
   public editHero(heroToEdit: Hero) {
