@@ -1,7 +1,6 @@
 import { Component, OnInit, Inject, ViewChild, AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormGroup, FormControl } from '@angular/forms';
-import { Hero } from '../data-models/hero.model';
 import { HeroService } from '../hero.service';
 
 @Component({
