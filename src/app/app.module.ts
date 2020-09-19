@@ -16,6 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { ImagePlaceholderDirective } from './img-placeholder.directive';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     HeroItemComponent,
     EditHeroComponent,
     MapComponent,
-    WelcomePageComponent
+    WelcomePageComponent,
+    ImagePlaceholderDirective
   ],
   imports: [
     BrowserModule,

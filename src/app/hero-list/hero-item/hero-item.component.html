@@ -1,8 +1,8 @@
 
-<div>
-  <div class="carousel-caption d-none d-md-block ">
+<div class="hero-container"> 
+  <div class="carousel-caption">
     <span class="image-description"> {{ hero.name }}</span>
   </div>
-  <img class="hero-image" [src]="hero.image.url" (click)="onEditHero()">
+  <img class="hero-image" [src]="hero.image.url" default="assets/images/img_placeholder.png" (click)="onEditHero()">
 </div>
 
