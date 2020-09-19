@@ -33,12 +33,16 @@ export class DataClientService {
       if (!this.batmanFamilyIds.includes(index)) {
         this.http.get<Hero>('https://www.superheroapi.com/api.php/10222869036332459/' + index)
         .pipe( tap((response) => {
-          response.biography.fullName = response["biography"]["full-name"];
-      })
+          if (response["response"] === "success") {
+            response.biography.fullName = response["biography"]["full-name"];
+          }
+        })
       )
       .subscribe(response => {
-        if(response.biography.publisher.includes('DC') && response.biography.alignment === 'good'){
-          responseData.push(response);  
+        if (response["response"] === "success") {
+          if(response.biography.publisher.includes('DC') && response.biography.alignment === 'good'){
+            responseData.push(response);  
+          }
         }
       });
       }
