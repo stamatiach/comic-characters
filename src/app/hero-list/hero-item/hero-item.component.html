@@ -1,8 +1,9 @@
 
 <div class="hero-container"> 
   <div class="carousel-caption">
-    <span class="image-description"> {{ hero.name }}</span>
+    <span class="image-description" *ngIf="!heroImgRef.classList.contains('default')"> {{ hero.name }}</span>
   </div>
-  <img class="hero-image" [src]="hero.image.url" default="assets/images/img_placeholder.png" (click)="onEditHero()">
+  <img class="hero-image" [src]="hero.image.url" #heroImgRef
+  default="assets/images/img_placeholder.png" (click)="onEditHero()">
 </div>
 

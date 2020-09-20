@@ -15,9 +15,6 @@ export class ImagePlaceholderDirective{
 
   updateUrl() {
     this.src = this.default;
-  }
-
-  load() {
     this.className = 'default';
   }
 }
